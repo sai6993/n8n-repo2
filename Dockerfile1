@@ -1,0 +1,10 @@
+FROM node:18-alpine
+
+RUN apk add --no-cache bash
+
+COPY . /home/node/
+
+WORKDIR /home/node
+
+CMD ["bash"]
+

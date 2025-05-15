@@ -1,8 +1,12 @@
 FROM node:18-alpine
 
-COPY . /home/node/
+# Install git and bash
+RUN apk add --no-cache git bash
+
+# Clone your GitHub repo directly (fresh copy)
+RUN git clone https://github.com/sai6993/n8n-repo24.git /home/node
 
 WORKDIR /home/node
 
-CMD ["sh"]
+CMD ["bash"]
 
